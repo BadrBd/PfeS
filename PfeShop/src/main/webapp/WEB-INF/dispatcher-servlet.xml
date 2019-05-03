@@ -16,7 +16,7 @@
 	<context:component-scan
 		base-package="BadrBd.PfeShop" />
 		<context:component-scan
-		base-package="BadrBd.ShopBackEnd.daoimpl" />
+		base-package="BadrBd.ShopBackEnd" />
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		id="viewResolver">
