@@ -11,5 +11,25 @@ html {
 body {
     padding-top: 90px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
     height:100%;
+   
 }
 
+.content {
+	padding-bottom: 60px; /*height of the footer*/	
+}
+
+
+footer {
+    margin: 0;
+}
+
+.wrapper {	
+	min-height:100%;
+	position: relative;
+}
+
+.dataTableImg{
+	width: 100px;
+	height: 100px;
+	
+}
