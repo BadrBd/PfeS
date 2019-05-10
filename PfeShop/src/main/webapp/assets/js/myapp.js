@@ -12,14 +12,17 @@ $(function() {
 	case 'All Products':
 		$('#listProducts').addClass('active');
 		break;
+	case 'Product Management':
+		$('#manageProducts').addClass('active');
+		break;
 	default:
 		if (menu == "Home")
 			break;
 		$('#listProducts').addClass('active');
 		$('#a_' + menu).addClass('active');
 		break;
-
 	}
+
 
 	// ocde for jquery datatable
 
@@ -116,4 +119,24 @@ $(function() {
 
 	
 	}
+	
+	//dismissing the alert after 3 seconds 
+	
+	var $alert= $('.alert');
+	if($alert.length){
+		setTimeout(function(){
+			
+			$alert.fadeOut('slow');
+		},3000)
+			
+			
+		}
+		
+		
+		
+
+	
+	
+	
+	
 });
