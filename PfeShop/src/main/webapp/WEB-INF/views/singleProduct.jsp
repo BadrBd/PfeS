@@ -28,7 +28,7 @@
 
 			<div class="thumbnail">
 
-				<img src="${images}/${product.code}.jpg" class="img img-responsive" />
+				<img src="${images}/${product.code}.jpg" class="img img-responsive" width=80%/>
 
 			</div>
 

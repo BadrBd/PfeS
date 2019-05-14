@@ -111,9 +111,15 @@
 
 		<!-- Datatable plugin -->
 		<script src="${js}/dataTables.bootstrap4.js"></script>
+		
+		<!-- DataTable Bootstrap Script -->
+		<script src="${js}/bootbox.min.js"></script>
+		
 
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
+		
+		
 
 
 	</div>
