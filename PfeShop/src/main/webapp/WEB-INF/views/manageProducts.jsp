@@ -15,10 +15,10 @@
 
 		<div class="col-md-10">
 
-			<div class="panel default">
+			<div class="panel panel-primary"">
 
 				<div class="panel-heading">
-<br/>
+					<br />
 					<h4>Product Management</h4>
 
 				</div>
@@ -90,7 +90,7 @@
 								<c:if test="${product.id == 0 }">
 									<div class="text-right">
 										<br />
-										<button type="button" class="btn btn-warning btn-xs"
+										<button type="button" class="btn btn-warning btn-sm"
 											data-toggle="modal" data-target="#myCategoryModal">Add
 											New Category</button>
 								</c:if>
@@ -116,20 +116,20 @@
 
 							</div>
 						</div>
-						
-						</sf:form>
+
+					</sf:form>
 				</div>
 
 
 
 
-				
+
 
 
 			</div>
 		</div>
 	</div>
-	
+
 
 	<br /> <br />
 
@@ -138,12 +138,11 @@
 
 		<div class='col-xs-12'>
 
-			
-				<h3><br/>
-					<b>Available products</b>
-					<br/>
-				</h3>
-			
+
+			<h3>
+				<br /> <b>Available products</b> <br />
+			</h3>
+
 
 		</div>
 		<div class='col-xs-10'>
@@ -187,4 +186,66 @@
 			</div>
 		</div>
 	</div>
+
+
+	<div class="modal fade" id="myCategoryModal" tabindex="-1"
+		role="dialog" aria-labelledby="myModalLabel">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+
+
+					<button type="button" class="close" data-dismiss="modal">
+						<span aria-hidden="true">&times;</span>
+					</button>
+					<h4 class="modal-title" id="myModalLabel">New Category</h4>
+
+
+				</div>
+
+				<div class="modal-body">
+					<sf:form id="categoryForm" class="form-horizontal"
+						modelAttribute="category" action="${contextRoot}/manage/category"
+						method="POST">
+
+						<div class="form-group">
+
+
+							<label class="control-label col-md-4">Name</label>
+							<div class="col-md-8">
+								<sf:input type="text" path="name"  id="category_name" class="form-control"
+									placeholder="Category Name" />
+
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+
+
+							<label class="control-label col-md-4">Description</label>
+							<div class="col-md-8">
+								<sf:textarea cols="" rows="5" type="text" path="description"  id="category_description" class="form-control"
+									placeholder="Enter category description here!" />
+
+							</div>
+						</div>
+						
+						
+						<div class="form-group">
+
+							<div class="col-md-offset-4 col-md-8">
+								<input type="submit" name="submit" value="Save" class="btn btn-primary"/>
+							</div>
+						</div>
+						
+						
+					</sf:form>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+
 </div>
