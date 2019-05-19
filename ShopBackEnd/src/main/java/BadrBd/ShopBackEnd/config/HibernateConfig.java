@@ -53,6 +53,7 @@ public class HibernateConfig {
 		properties.put("hibernate.dialect",DATABASE_DIALECT);
 		properties.put("hibernate.show_sql",DATABASE_DIALECT);
 		properties.put("hibernate.format_sql",DATABASE_DIALECT);
+		properties.put("hibernate.hbm2ddl.auto","update");
 
 		return properties;
 	}

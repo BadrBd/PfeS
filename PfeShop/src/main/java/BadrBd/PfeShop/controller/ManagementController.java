@@ -39,7 +39,7 @@ public class ManagementController {
 	@Autowired
 	private CategoryDAO categoryDAO;
 
-	@RequestMapping(value = "/products",  method = { RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = "/products",  method =RequestMethod.GET)
 	public ModelAndView showManageProducts(@RequestParam(name="operation", required=false) String operation) {
 
 		ModelAndView mv = new ModelAndView("page");
