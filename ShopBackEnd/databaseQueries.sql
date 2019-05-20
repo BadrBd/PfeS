@@ -27,16 +27,16 @@ CREATE TABLE user_detail (
 
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Virat', 'Kohli', 'ADMIN', true, '$2a$06$ORtBskA2g5Wg0HDgRE5ZsOQNDHUZSdpJqJ2.PGXv0mKyEvLnKP7SW', 'vk@gmail.com', '8888888888');
+VALUES ('badr', 'bid', 'ADMIN', true, '$2b$10$uylCxt2GA1cfxXoLd.xx4e3sOxbwip4/x7KVhMXMwYxfIv0x024ny', 'vk@gmail.com', '8888888888');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Ravindra', 'Jadeja', 'SUPPLIER', true, '$2a$06$bzYMivkRjSxTK2LPD8W4te6jjJa795OwJR1Of5n95myFsu3hgUnm6', 'rj@gmail.com', '9999999999');
+VALUES ('zakaria', 'bidouli', 'SUPPLIER', true, '$2b$10$ARizAo1LI4cJWtLXjoX2KemOZwkzOe5F2HdDw0IBVIbLYw6E/xw6G', 'rj@gmail.com', '9999999999');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Ravichandra', 'Ashwin', 'SUPPLIER', true, '$2a$06$i1dLNlXj2uY.UBIb9kUcAOxCigGHUZRKBtpRlmNtL5xtgD6bcVNOK', 'ra@gmail.com', '7777777777');
+VALUES ('maroine', 'bidouli', 'SUPPLIER', true, '$2b$10$ZNhdoMeU7LN1Ut86Il1MF.AGEKpkgfth8ozWDYeoVhflF2tOGpu3G', 'ra@gmail.com', '7777777777');
 INSERT INTO user_detail 
 (first_name, last_name, role, enabled, password, email, contact_number) 
-VALUES ('Khozema', 'Nullwala', 'USER', true, '$2a$06$4mvvyO0h7vnUiKV57IW3oudNEaKPpH1xVSdbie1k6Ni2jfjwwminq', 'kn@gmail.com', '7777777777');
+VALUES ('badr', 'bidouli', 'USER', true, '$2b$10$uylCxt2GA1cfxXoLd.xx4e3sOxbwip4/x7KVhMXMwYxfIv0x024ny', 'kn@gmail.com', '7777777777');
 
 
 CREATE TABLE product (
@@ -69,3 +69,28 @@ VALUES ('PRDMNO123PQRX', ' Macbook Pro', 'apple', 'This is one of the best lapto
 INSERT INTO product (code, name, brand, description, unit_price, quantity, is_active, category_id, supplier_id, purchases, views)
 VALUES ('PRDABCXYZDEFX', 'Dell Latitude E6510', 'dell', 'This is one of the best laptop series from dell that can be used!', 48000, 5, true, 1, 3, 0, 0 );
 
+-- the address table to store the user billing and shipping addresses
+CREATE TABLE address (
+	id MEDIUMINT AUTO_INCREMENT,
+	user_id int,
+	address_line_one VARCHAR(100),
+	address_line_two VARCHAR(100),
+	city VARCHAR(20),
+	state VARCHAR(20),
+	country VARCHAR(20),
+	postal_code VARCHAR(10),
+	is_billing BOOLEAN,
+	is_shipping BOOLEAN,
+	CONSTRAINT fk_address_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+	CONSTRAINT pk_address_id PRIMARY KEY (id)
+);
+
+-- the cart table to store the user cart top-level details
+CREATE TABLE cart (
+	id MEDIUMINT AUTO_INCREMENT,
+	user_id int,
+	grand_total DECIMAL(10,2),
+	cart_lines int,
+	CONSTRAINT fk_cart_user_id FOREIGN KEY (user_id ) REFERENCES user_detail (id),
+	CONSTRAINT pk_cart_id PRIMARY KEY (id)
+);

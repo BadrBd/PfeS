@@ -108,14 +108,14 @@ public class ManagementController {
 		return "redirect:/manage/products?operation=product";
 	}
 
-	@RequestMapping(value = "/product/{id}/activation", method=RequestMethod.POST)
+	@RequestMapping(value = "/product/{id}/activation", method=RequestMethod.GET)
 	@ResponseBody
 	public String managePostProductActivation(@PathVariable int id) {		
 		Product product = productDAO.get(id);
 		boolean isActive = product.isActive();
-		product.setActive(!product.isActive());
+		product.setActive(!isActive);
 		productDAO.update(product);		
-		return (isActive)? "Product Desactivated Successfully!": "Product Activated Successfully";
+		return (isActive)? "Product Dectivated Successfully!": "Product Activated Successfully";
 	}
 	
 	

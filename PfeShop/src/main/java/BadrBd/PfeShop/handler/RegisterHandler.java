@@ -3,6 +3,7 @@ package BadrBd.PfeShop.handler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import BadrBd.PfeShop.model.RegisterModel;
@@ -14,6 +15,10 @@ import BadrBd.ShopBackEnd.dto.User;
 
 @Component
 public class RegisterHandler {
+	
+	 @Autowired
+	 private PasswordEncoder passwordEncoder;
+	
      @Autowired
 	private UserDAO userDAO;
 	
@@ -64,8 +69,14 @@ public class RegisterHandler {
 		  }
 		  
 		  
+		  //code the password
+		  user.setPassword(passwordEncoder.encode(user.getPassword()));
+		  
+		  
 		  // save the user
 		  userDAO.add(user);
+		  
+		  
 		  // save the billing address
 		  Address billing = registerModel.getBilling();
 		  billing.setUserId(user.getId());

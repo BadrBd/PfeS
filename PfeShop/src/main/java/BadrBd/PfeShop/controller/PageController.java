@@ -125,6 +125,27 @@ public class PageController {
 		
 	}
 	
+	@RequestMapping(value="/login")
+	public ModelAndView login(@RequestParam(name="error", required = false)	String error) {
+		ModelAndView mv= new ModelAndView("login");
+		
+		if(error!=null) {
+			mv.addObject("message", "Username or Password is invalid!");
+		}
+		mv.addObject("title", "login");
+
+		return mv;
+	}
+	
+	
+	@RequestMapping(value="/access-denied")
+	public ModelAndView accessDenied() {
+		ModelAndView mv = new ModelAndView("error");		
+		mv.addObject("errorTitle", "Aha! Caught You.");		
+		mv.addObject("errorDescription", "You are not authorized to view this page!");		
+		mv.addObject("title", "403 Access Denied");		
+		return mv;
+	}	
 	
 /*@RequestMapping(value="/test")	
 public ModelAndView test(@RequestParam(value="greeting",required=false)String greeting) {	
