@@ -5,12 +5,16 @@
  */
 html {
 	height: 100%;
+		margin: 0;
+	
 }
 
 body {
 	padding-top: 100px;
 	/* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
 	height: 100%;
+		margin: 0;
+	
 }
 
 .content {
@@ -24,6 +28,13 @@ footer {
 .wrapper {
 	min-height: 100%;
 	position: relative;
+	  margin-right: auto; /* 1 */
+  margin-left:  auto; /* 1 */
+
+  max-width: 10000px; /* 2 */
+
+  padding-right: 3px; /* 3 */
+  padding-left:  3px; /* 3 */
 }
 
 .dataTableImg {
@@ -89,4 +100,15 @@ input:checked + .slider:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
+}
+
+.table-responsive{
+	overflow-x: inherit;
+	
+}
+.footer {
+	 clear: both;
+    position: relative;
+    height: 4px;
+    margin-top: 10px;
 }

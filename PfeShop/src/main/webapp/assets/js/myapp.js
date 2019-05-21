@@ -26,19 +26,16 @@ $(function() {
 	// to tackle csrf token
 	var token = $('meta[name="_csrf"]').attr('content');
 	var header = $('meta[name="_csrf_header"]').attr('content');
-if(token.length > 0 && header.length > 0){
-	
-	$(document).ajaxSend(function(e, xhr, options){
-		
-		xhr.setRequestHeader(header,token);
-		
-		
-	})
-	
-	
-	
-}
-	
+	if (token.length > 0 && header.length > 0) {
+
+		$(document).ajaxSend(function(e, xhr, options) {
+
+			xhr.setRequestHeader(header, token);
+
+		})
+
+	}
+
 	// ocde for jquery datatable
 
 	var $table = $('#productListTable');
@@ -83,7 +80,7 @@ if(token.length > 0 && header.length > 0){
 							{
 								data : 'unitPrice',
 								mRender : function(data, type, row) {
-									return '&#8377; ' + data
+									return  data + '&nbsp;'+'DH'
 								}
 							},
 							{
@@ -109,18 +106,28 @@ if(token.length > 0 && header.length > 0){
 											+ window.contextRoot
 											+ '/show/'
 											+ data
-											+ '/product" class="btn btn-primary"><i class="fas fa-eye fa-2x" ></i></a>  &#160;';
+											+ '/product" class="btn btn-primary"><i class="fas fa-eye" ></i></a> </br></br> ';
 
-									if (row.quantity < 1) {
-
-										str += '<a href="javascript:void(0)" class="btn btn-success disabled"><i class="fas fa-cart-plus fa-2x"></i></a>';
-									} else {
-
+									if (userRole == 'ADMIN') {
 										str += '<a href="'
 												+ window.contextRoot
-												+ '/cart/add'
+												+ '/manage/'
 												+ data
-												+ '/product" class="btn btn-success"><i class="fas fa-cart-plus fa-2x" ></i></a>';
+												+ '/product" class="btn btn-warning"><i class="far fa-edit" ></i></a>';
+									} else {
+										if (row.quantity < 1) {
+
+											str += '<a href="javascript:void(0)" class="btn btn-success disabled"><i class="fas fa-cart-plus"></i></a>';
+										} else {
+
+
+											str += '<a href="'
+													+ window.contextRoot
+													+ '/cart/add'
+													+ data
+													+ '/product" class="btn btn-success"><i class="fas fa-cart-plus " ></i></a>';
+
+										}
 
 									}
 
@@ -203,7 +210,7 @@ if(token.length > 0 && header.length > 0){
 							{
 								data : 'unitPrice',
 								mRender : function(data, type, row) {
-									return '&#8377; ' + data
+									return  data + '&nbsp;'+'DH'
 								}
 							},
 
@@ -254,39 +261,58 @@ if(token.length > 0 && header.length > 0){
 
 					],
 
-					initComplete: function () {
+					initComplete : function() {
 						var api = this.api();
-						api.$('.switch input[type="checkbox"]').on('change' , function() {							
-							var dText = (this.checked)? 'You want to activate the Product?': 'You want to de-activate the Product?';
-							var checked = this.checked;
-							var checkbox = $(this);
-							debugger;
-						    bootbox.confirm({
-						    	size: 'medium',
-						    	title: 'Product Activation/Deactivation',
-						    	message: dText,
-						    	callback: function (confirmed) {
-							        if (confirmed) {
-							            $.ajax({							            	
-							            	type: 'GET',
-							            	url: window.contextRoot + '/manage/product/'+checkbox.prop('value')+'/activation',
-							        		timeout : 100000,
-							        		success : function(data) {
-							        			bootbox.alert(data);							        										        			
-							        		},
-							        		error : function(e) {
-							        			bootbox.alert('ERROR: '+ e);
-							        			//display(e);
-							        		}						            	
-							            });
-							        }
-							        else {							        	
-							        	checkbox.prop('checked', !checked);
-							        }
-						    	}
-						    });																											
-						});
-							
+						api
+								.$('.switch input[type="checkbox"]')
+								.on(
+										'change',
+										function() {
+											var dText = (this.checked) ? 'You want to activate the Product?'
+													: 'You want to de-activate the Product?';
+											var checked = this.checked;
+											var checkbox = $(this);
+											debugger;
+											bootbox
+													.confirm({
+														size : 'medium',
+														title : 'Product Activation/Deactivation',
+														message : dText,
+														callback : function(
+																confirmed) {
+															if (confirmed) {
+																$
+																		.ajax({
+																			type : 'GET',
+																			url : window.contextRoot
+																					+ '/manage/product/'
+																					+ checkbox
+																							.prop('value')
+																					+ '/activation',
+																			timeout : 100000,
+																			success : function(
+																					data) {
+																				bootbox
+																						.alert(data);
+																			},
+																			error : function(
+																					e) {
+																				bootbox
+																						.alert('ERROR: '
+																								+ e);
+																				// display(e);
+																			}
+																		});
+															} else {
+																checkbox
+																		.prop(
+																				'checked',
+																				!checked);
+															}
+														}
+													});
+										});
+
 					}
 				});
 	}

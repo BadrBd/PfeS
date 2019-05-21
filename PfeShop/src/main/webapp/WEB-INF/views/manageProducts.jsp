@@ -13,13 +13,13 @@
 			</div>
 		</c:if>
 
-		<div class="col-md-10">
+		<div class="col-md-12">
 
-			<div class="panel panel-primary"">
+			<div class="panel panel-default">
 
 				<div class="panel-heading">
 					<br />
-					<h4>Product Management</h4>
+					<h3>Product Management</h3>
 
 				</div>
 
@@ -146,10 +146,9 @@
 
 		</div>
 		<div class='col-xs-10'>
-			<div class="overflow-auto">
-
-
-				<table id="adminProductsTable"
+			<div class='container-fluid'>
+				<div class='table-responsive'>
+			<table id="adminProductsTable"
 					class="table table-striped table-bordered">
 
 					<thead>
@@ -182,8 +181,16 @@
 
 
 				</table>
-
+			
 			</div>
+			
+			</div>
+			
+
+
+				
+
+			
 		</div>
 	</div>
 

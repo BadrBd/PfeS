@@ -8,9 +8,9 @@
 
 			<ol class="breadcrumb">
 
-				<li><a href="${contextRoot}/home">Home</a></li>
-				<li><a href="${contextRoot}/show/all/products">Products</a></li>
-				<li class="active">${product.name}</li>
+				<li class="breadcrumb-item"><a href="${contextRoot}/home">Home</a></li>
+				<li class="breadcrumb-item"><a href="${contextRoot}/show/all/products">Products</a></li>
+				<li class="breadcrumb-item active">${product.name}</li>
 
 			</ol>
 
@@ -28,7 +28,8 @@
 
 			<div class="thumbnail">
 
-				<img src="${images}/${product.code}.jpg" class="img img-responsive" width=80%/>
+				<img src="${images}/${product.code}.jpg" class="img img-responsive"
+					width=80% />
 
 			</div>
 
@@ -45,10 +46,10 @@
 			<hr />
 
 			<h4>
-				Price: <strong> &#8377; ${product.unitPrice} /-</strong>
+				Price: <strong>  ${product.unitPrice} DH </strong>
 			</h4>
 			<hr />
-			
+
 			<c:choose>
 
 				<c:when test="${product.quantity < 1}">
@@ -65,27 +66,37 @@
 				</c:otherwise>
 
 			</c:choose>
-			<c:choose>
-
-				<c:when test="${product.quantity < 1}">
 
 
-					<a href="javascript:void(0)" class="btn btn-success disabled">
-						<strike><i class="fas fa-cart-plus "></i> Add to Cart</strike>
-					</a>
+			<security:authorize access="isAnonymous() or hasAuthority('USER')">
+				<c:choose>
+
+					<c:when test="${product.quantity < 1}">
 
 
-				</c:when>
-				<c:otherwise>
-					<a href="${contextRoot}/cart/add/${product.id}/product"
-						class="btn btn-success"> <i class="fas fa-cart-plus "></i> Add
-						to Cart
-					</a>
-
-				</c:otherwise>
-			</c:choose>
+						<a href="javascript:void(0)" class="btn btn-success disabled">
+							<strike><i class="fas fa-cart-plus "></i> Add to Cart</strike>
+						</a>
 
 
+					</c:when>
+					<c:otherwise>
+						<a href="${contextRoot}/cart/add/${product.id}/product"
+							class="btn btn-success"> <i class="fas fa-cart-plus "></i>
+							Add to Cart
+						</a>
+
+					</c:otherwise>
+				</c:choose>
+			</security:authorize>
+
+
+			<security:authorize access="hasAuthority('ADMIN')">
+				<a href="${contextRoot}/manage/${product.id}/product" class="btn btn-warning">
+				<span class="far fa-edit"></span> Edit</a>
+			</security:authorize>	
+			
+			
 			<a href="${contextRoot}/show/all/products" class="btn btn-primary">
 				Back</a>
 
