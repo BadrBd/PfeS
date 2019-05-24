@@ -40,7 +40,7 @@
 			
 			
 				<security:authorize access="isAuthenticated()">
-						<li class="dropdown" id="userModel">
+						<li class="dropdown" id="userCart">
 						  <a class="btn btn-default dropdown-toggle" href="javascript:void(0)" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
 						   <i class="fas fa-user"></i>
 						   &nbsp;${userModel.fullName}

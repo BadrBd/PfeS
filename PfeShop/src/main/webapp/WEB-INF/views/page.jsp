@@ -32,6 +32,31 @@
 	window.contextRoot = '${contextRoot}'
 </script>
 
+
+<!-- JQuery -->
+		<script src="${js}/jquery.js"></script>
+
+		<!-- jquery validation Script -->
+		<script src="${js}/jquery.validate.js"></script>
+
+		<!-- Bootstrap core JavaScript -->
+		<script src="${js}/bootstrap.bundle.min.js"></script>
+
+		<!-- Datatable plugin -->
+		<script src="${js}/jquery.dataTables.js"></script>
+
+		<!-- Datatable plugin -->
+		<script src="${js}/dataTables.bootstrap4.js"></script>
+
+		<!-- DataTable Bootstrap Script -->
+		<script src="${js}/bootbox.min.js"></script>
+
+
+
+		<!-- Self coded javascript -->
+		<script src="${js}/myapp.js"></script>
+
+
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
@@ -94,6 +119,11 @@
 			<c:if test="${userClickManageProducts == true}">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
+			
+			<!-- Load only when user clicks manage product -->
+			<c:if test="${userClickShowCart == true}">
+				<%@include file="cart.jsp"%>
+			</c:if>	
 
 		</div>
 
@@ -101,28 +131,7 @@
 		<%@include file="./shared/footer.jsp"%>
 
 
-		<!-- JQuery -->
-		<script src="${js}/jquery.js"></script>
-
-		<!-- jquery validation Script -->
-		<script src="${js}/jquery.validate.js"></script>
-
-		<!-- Bootstrap core JavaScript -->
-		<script src="${js}/bootstrap.bundle.min.js"></script>
-
-		<!-- Datatable plugin -->
-		<script src="${js}/jquery.dataTables.js"></script>
-
-		<!-- Datatable plugin -->
-		<script src="${js}/dataTables.bootstrap4.js"></script>
-
-		<!-- DataTable Bootstrap Script -->
-		<script src="${js}/bootbox.min.js"></script>
-
-
-
-		<!-- Self coded javascript -->
-		<script src="${js}/myapp.js"></script>
+		
 
 
 
