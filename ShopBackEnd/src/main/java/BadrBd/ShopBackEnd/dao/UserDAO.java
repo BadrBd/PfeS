@@ -18,6 +18,8 @@ public interface UserDAO {
 		
 		// adding and updating a new address
 		boolean addAddress(Address address);
+		Address getAddress(int addressId);
+		boolean updateAddress(Address address);
 		Address getBillingAddress(int userId);
 		List<Address> listShippingAddresses(int userId);
 

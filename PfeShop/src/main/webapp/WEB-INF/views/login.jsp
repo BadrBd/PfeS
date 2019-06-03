@@ -62,7 +62,7 @@
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="${contextRoot}/home">Online
+					<a class="navbar-brand" href="${contextRoot}/home"><img src="${images}/logo.png"  height="50px"  width="50px" />Online
 						Shopping</a>
 				</div>
 			</div>

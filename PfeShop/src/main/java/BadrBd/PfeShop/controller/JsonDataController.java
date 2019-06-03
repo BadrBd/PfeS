@@ -2,6 +2,7 @@ package BadrBd.PfeShop.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -43,6 +44,18 @@ public class JsonDataController {
 			
 			return productDAO.listActiveProductsByCategory(id);
 					
+		}
+		
+		@RequestMapping("/mv/products")
+		@ResponseBody
+		public List<Product> getMostViewedProducts() {		
+			return productDAO.getProductsByParam("views", 5);				
+		}
+			
+		@RequestMapping("/mp/products")
+		@ResponseBody
+		public List<Product> getMostPurchasedProducts() {		
+			return productDAO.getProductsByParam("purchases", 2);				
 		}
 		
 }

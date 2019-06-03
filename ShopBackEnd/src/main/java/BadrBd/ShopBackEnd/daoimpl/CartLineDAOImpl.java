@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 import BadrBd.ShopBackEnd.dao.CartLineDAO;
 import BadrBd.ShopBackEnd.dto.Cart;
 import BadrBd.ShopBackEnd.dto.CartLine;
+import BadrBd.ShopBackEnd.dto.OrderDetail;
 
 
 
@@ -108,6 +109,15 @@ public class CartLineDAOImpl implements CartLineDAO {
 										.getResultList();
 	}
 
-
+	@Override
+	public boolean addOrderDetail(OrderDetail orderDetail) {
+		try {			
+			sessionFactory.getCurrentSession().persist(orderDetail);			
+			return true;
+		}
+		catch(Exception ex) {
+			return false;
+		}
+	}
 		
 }
