@@ -18,6 +18,7 @@ $(function() {
 	case 'User Cart':
 		$('#usercart').addClass('active');
 		break;
+
 	default:
 		if (menu == "Home")
 			break;
@@ -271,15 +272,15 @@ $(function() {
 								.on(
 										'change',
 										function() {
-											var dText = (this.checked) ? 'You want to activate the Product?'
-													: 'You want to de-activate the Product?';
+											var dText = (this.checked) ? 'Do you want to activate the Product?'
+													: 'Do you want to desactivate the Product?';
 											var checked = this.checked;
 											var checkbox = $(this);
 											debugger;
 											bootbox
 													.confirm({
 														size : 'medium',
-														title : 'Product Activation/Deactivation',
+														title : 'Product Activation/Desactivation',
 														message : dText,
 														callback : function(
 																confirmed) {

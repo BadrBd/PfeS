@@ -55,21 +55,21 @@
 </head>
 
 <body>
-	<div class="wrapper">
+
+	<div class="wrapper ">
 
 		<!-- Navigation -->
 		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
-					<a class="navbar-brand" href="${contextRoot}/home"><img src="${images}/logo.png"  height="50px"  width="50px" />Online
-						Shopping</a>
+					<a class="navbar-brand" href="${contextRoot}/home"><img src="${images}/logooo.JPG"  height="50px"  width="120px"  /></a>
 				</div>
 			</div>
 		</nav>
 
 		<!-- Page Content -->
-		<div class="content">
+		<div class="content ">
 		
 			
    <div class="container">
@@ -95,13 +95,23 @@
      
      <div class="col-md-offset-3 col-md-6">
       
-      <div class="panel panel-primary">
-       
-       <div class="panel-heading">
-        <h4>Login</h4>
-       </div>
-       
-       <div class="panel-body">
+     
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="card mb-3" style="max-width: 540px;">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="${images}/logi.jpg" class="card-img" alt="...">
+    </div>
+    <div class="col-md-8">
+    
+      <div class="card-body">
         <form action="${contextRoot}/login" method="POST" class="form-horizontal"
          id="loginForm"
         >
@@ -121,18 +131,23 @@
           <div class="col-md-offset-4 col-md-8">
            <input type="hidden"  name="${_csrf.parameterName}"   value="${_csrf.token}"/>
            <input type="submit" value="Login" class="btn btn-primary"/>
+           <div class="text-right">
+                <a href="${contextRoot}/register" >Register </a>
+        </div>
+               
           </div>
          </div>
         </form>
-       
-       </div>
-       <div class="panel-footer">
-       	<div class="text-right">
-       		New User - <a href="${contextRoot}/register">Register Here</a>
-       	</div>
-       </div>
-      
-      </div> 
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+    
+    
+    
+    
     
      </div>
      
@@ -143,7 +158,7 @@
 			
 		</div>
 		</div>
-
+		
 		<!-- Footer -->
 		<%@include file="./shared/footer.jsp"%>
 

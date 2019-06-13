@@ -49,13 +49,13 @@ public class JsonDataController {
 		@RequestMapping("/mv/products")
 		@ResponseBody
 		public List<Product> getMostViewedProducts() {		
-			return productDAO.getProductsByParam("views", 5);				
+			return productDAO.getProductsByParam("views", 6);				
 		}
 			
 		@RequestMapping("/mp/products")
 		@ResponseBody
 		public List<Product> getMostPurchasedProducts() {		
-			return productDAO.getProductsByParam("purchases", 2);				
+			return productDAO.getProductsByParam("purchases", 6);				
 		}
 		
 }

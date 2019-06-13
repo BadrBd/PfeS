@@ -2,28 +2,33 @@
 <div class="container">
 	<div class="row">
 
-
+</br>
 		<c:if test="${not empty message}">
 
 			<div class="col-xs-12 ">
-				<div class="alert alert-success alert-dismissible">
-					<button type="button" clase="close" data-dismiss="alert">&times;</button>
+				<div class="alert alert-dismissible alert-info">
+					<button type="button" class="close" data-dismiss="alert">&times;</button>
 					${message}
 				</div>
 			</div>
+			
+			
+			
+			
+			
 		</c:if>
 
-		<div class="col-md-12">
+		<div class=" container">
 
-			<div class="panel panel-default">
+			<div class="card ">
 
-				<div class="panel-heading">
+				<div class="card-header text-white bg-success mb-3">
 					<br />
-					<h3>Product Management</h3>
+					<center><h3>Add a Product</h3></center>
 
 				</div>
 
-				<div class="panel-body">
+				<div class="card-body">
 
 					<sf:form class="form-horizontal" modelAttribute="product"
 						action="${contextRoot}/manage/products" method="POST"
@@ -56,7 +61,7 @@
 						</div>
 
 						<div class="form-group">
-							<label class="control-label col-md-3">Unit Price</label>
+							<label class="control-label col-md-3">Price</label>
 							<div class="col-md-8">
 								<sf:input type="number" path="unitPrice" id="unitPrice"
 									class="form-control" placeholder="Enter Unit Price" />
@@ -75,7 +80,8 @@
 						<div class="form-group">
 							<label class="control-label col-md-3">Enter an image</label>
 							<div class="col-md-8">
-								<sf:input type="file" path="file" id="file" class="form-control" />
+								<sf:input type="file" path="file" id="file" class="form-control-file" aria-describedby="fileHelp" />
+								<small id="fileHelp" class="form-text text-muted">Make sure to choose an image "jpg"</small>
 								<sf:errors path="file" cssClass="help-block" element="em" />
 							</div>
 						</div>
@@ -86,7 +92,7 @@
 							<div class="col-md-8">
 								<sf:select id="categoryId" path="categoryId"
 									items="${categories}" itemLabel="name" itemValue="id"
-									class="form-control" />
+									class="custom-select" />
 								<c:if test="${product.id == 0 }">
 									<div class="text-right">
 										<br />
@@ -104,7 +110,7 @@
 
 							<div class="col-md-offset-3 col-md-8">
 								<input type="submit" name="submit" id="submit"
-									class="btn btn-primary" />
+									class="btn btn-info" />
 
 
 								<sf:hidden path="id" />
@@ -138,14 +144,14 @@
 
 		<div class='col-xs-12'>
 
-
+<br /><br />
 			<h3>
-				<br /> <b>Available products</b> <br />
+				<br />  <u><b>Available products Management</b></u>&nbsp;<i class="fas fa-tools"></i><br />
 			</h3>
-
+<br />
 
 		</div>
-		<div class='col-xs-10'>
+		<div class='col-xs-10 d-flex justify-content-center align-items-center container'>
 			<div class='container-fluid'>
 				<div class='table-responsive'>
 			<table id="adminProductsTable"
@@ -202,10 +208,11 @@
 				<div class="modal-header">
 
 
-					<button type="button" class="close" data-dismiss="modal">
-						<span aria-hidden="true">&times;</span>
-					</button>
-					<h4 class="modal-title" id="myModalLabel">New Category</h4>
+						<h5 class="modal-title" id="myModalLabel">New Category</h5>
+					  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+				
 
 
 				</div>
@@ -239,11 +246,12 @@
 						</div>
 						
 						
-						<div class="form-group">
+						<div class="modal-footer">
 
-							<div class="col-md-offset-4 col-md-8">
-								<input type="submit" name="submit" value="Save" class="btn btn-primary"/>
-							</div>
+							
+							
+							<button type="submit" name="submit" value="Save" class="btn btn-primary">Save changes</button>
+                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 						</div>
 						
 						

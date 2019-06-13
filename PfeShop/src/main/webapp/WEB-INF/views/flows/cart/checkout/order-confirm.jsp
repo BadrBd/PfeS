@@ -58,7 +58,7 @@
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
            <div class="navbar-header">
-               <a class="navbar-brand" href="${contextRoot}/home">Online Shopping</a>
+              <a class="navbar-brand" href="${flowExecutionUrl}&_eventId_home"><img src="${images}/logooo.JPG"  height="50px"  width="120px" /></a>
            </div>
 		</div>
 	</nav>
@@ -80,37 +80,79 @@
 		    		<div class="row">
 		    			<div class="col-xs-6">
 		    				<address>
-		    				<strong>Billed To:</strong><br>
+		    				
+		    				
+		    				
+		    				
+		    				
+		    				<div class="card " style="width: 15rem;">
+		    				<div class="card-header text-white bg-info mb-3">
+		    				<strong>Billed To:</strong>
+		    				</div>
+		    				<div class="card-body">
 		    					${orderDetail.user.firstName} ${orderDetail.user.lastName}<br>
 		    					${orderDetail.billing.addressLineOne}<br>
 		    					${orderDetail.billing.addressLineTwo}<br>
 		    					${orderDetail.billing.city} - ${orderDetail.billing.postalCode}<br>
 		    					${orderDetail.billing.state} - ${orderDetail.billing.country}
+		    					</div>
+		    					</div>
+		    					
+		    					
+		    					
+		    					
+		    					
 		    				</address>
-		    			</div>
-		    			<div class="col-xs-6 text-right">
+		    			</div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			<div class="col-xs-6 margin-right:auto;">
 		    				<address>
-		        			<strong>Shipped To:</strong><br>
+		    				
+		    				
+		    				<div class="card " style="width: 15rem;">
+		    				<div class="card-header text-white bg-info mb-3">
+		        			<strong>Shipped To:</strong>
+		        			</div>
+		        				<div class="card-body">
 		    					${orderDetail.user.firstName} ${orderDetail.user.lastName}<br>
 		    					${orderDetail.shipping.addressLineOne}<br>
 		    					${orderDetail.shipping.addressLineTwo}<br>
 		    					${orderDetail.shipping.city} - ${orderDetail.shipping.postalCode}<br>
 		    					${orderDetail.shipping.state} - ${orderDetail.shipping.country}
+		    					
+		    					</div>
+		    					
+		    					</div>
 		    				</address>
 		    			</div>
 		    		</div>
 		    		<div class="row">
 		    			<div class="col-xs-6">
 		    				<address>
-		    					<strong>Payment Method:</strong><br>
+		    				
+		    				<div class="card" style="width: 15rem;">
+		    				<div class="card-header text-white bg-info mb-3">
+		    					<strong>Payment Method:</strong>
+		    					</div>
+		    					<div class="card-body">
 		    					Card Payment <br>
 		    					${orderDetail.user.email}
+		    					</div>
+		    					</div>
 		    				</address>
 		    			</div>
-		    			<div class="col-xs-6 text-right">
+		    			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		    			
+		    			<div class="col-xs-6 margin-right:auto;" >
 		    				<address>
-		    					<strong>Order Date:</strong><br>
-		    					${orderDetail.orderDate}<br><br>
+		    				
+		    				<div class="card " style="width: 15rem;">
+		    				<div class="card-header text-white bg-info mb-3">
+		    					<strong>Order Date:</strong>
+		    					</div>
+		    					<div class="card-body">
+		    					${orderDetail.orderDate}
+		    					</div>
+		    					</div>
 		    				</address>
 		    			</div>
 		    		</div>
@@ -152,7 +194,7 @@
 		    	</div>
 		    </div>
 		    <div class="text-center">
-		    	<a href="${contextRoot}/show/all/products" class="btn btn-lg btn-warning">Continue Shopping</a>
+		    	<a href="${contextRoot}/show/all/products" class="btn btn-lg btn-success">Continue Shopping</a>
 		    </div>
 		</div>
 <%@include file="../../shared/flows-footer.jsp" %>	

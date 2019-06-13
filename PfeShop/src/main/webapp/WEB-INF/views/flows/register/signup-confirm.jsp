@@ -4,13 +4,13 @@
 	
 		<div class="col-sm-6">
 	
-			<div class="panel panel-primary">
+			<div class="card" >
 				
-				<div class="panel-heading">
+				<div class="card-header ">
 					<h4>Personal Details</h4>
 				</div>
 			
-				<div class="panel-body">
+				<div class="card-body">
 					<div class="text-center">
 					<h3>Name : <strong>${registerModel.user.firstName} ${registerModel.user.lastName}</strong></h3>
 						<h4>Email : <strong>${registerModel.user.email}</strong></h4>
@@ -19,7 +19,7 @@
 						
 					</div>
 				</div>
-				<div class="panel-footer">
+				<div class="card-footer">
 					<a href="${flowExecutionUrl}&_eventId_personal" class="btn btn-primary">EDIT</a>
 				</div>
 			
@@ -30,13 +30,13 @@
 		
 		<div class="col-sm-6">
 		
-			<div class="panel panel-primary">
+			<div class="card" >
 				
-				<div class="panel-heading">
+				<div class="card-header">
 					<h4>Billing Address</h4>
 				</div>
 			
-				<div class="panel-body">
+				<div class="card-body">
 					<div class="text-center">
 				<p>${registerModel.billing.addressLineOne}, </p>
 						<p>${registerModel.billing.addressLineTwo}, </p>
@@ -45,7 +45,7 @@
 						<p>${registerModel.billing.country}</p>
 					</div>
 				</div>
-			<div class="panel-footer">
+			<div class="card-footer">
 					
 				
 							<a href="${flowExecutionUrl}&_eventId_billing" class="btn btn-primary">EDIT</a>
@@ -56,7 +56,7 @@
 		
 		</div>
 	
-	</div>
+	</div></br></br>
 	
 	<div class="row">
 		
@@ -64,7 +64,7 @@
 			
 			<div class="text-center">
 				
-				<a href="${flowExecutionUrl}&_eventId_submit" class="btn btn-primary">confirm</a>
+				<a href="${flowExecutionUrl}&_eventId_submit" class="btn btn-success">confirm</a>
 				
 			</div>
 			

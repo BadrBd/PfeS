@@ -6,19 +6,28 @@
 			<div class="col-md-6">
 				
 				<div class="row">
+				
+				
+				
 					<c:forEach items="${checkoutModel.cartLines}" var="cartLine">
 					<div class="col-xs-12">
+						<div class="card" style="width: 15rem;">
 						
-						<div>
+						<div class="card-header">
 							<h3>${cartLine.product.name}</h3>
-							<hr/>
+							</div>
+							
+							<div class="card-body">
 							<h4>Quantity -${cartLine.productCount}</h4>
-							<h5>Buying Price - &#8377; ${cartLine.buyingPrice}/-</h5>							
-						</div>						
-						<hr/>
-						<div class="text-right">
-							<h3>Grand Total - &#8377; ${cartLine.total}/-</h3>
-						</div>						
+							<h5>Price -${cartLine.buyingPrice} DH</h5>							
+							</div>					
+						
+						<div class="card-footer text-muted">
+							<h3> ${cartLine.total} DH</h3>
+							</div>
+							
+						
+						</div>					
 					</div>
 					</c:forEach>
 				</div>
@@ -27,13 +36,13 @@
 			</div>
 			
 			<div class="col-md-6">
-	            <div class="panel panel-default">
-	                <div class="panel-heading">
-	                    <h3 class="panel-title">
+	            <div class="card border-success mb-3">
+	                <div class="card-header">
+	                    <h3 class="card-title">
 	                        Payment Details
 	                    </h3>
 	                </div>
-	                <div class="panel-body">
+	                <div class="card-body text-primary">
 	                    <form role="form">
 	                    <div class="form-group">
 	                        <label for="cardNumber">
@@ -66,10 +75,20 @@
 	                    </div>
 	                    </form>
 	                </div>
-	            </div>
-	            <ul class="nav nav-pills nav-stacked">
+	                
+	                
+	                
+	                
+	                <div class="card-footer text-muted">
+                    <ul class="nav nav-pills nav-stacked">
 	                <li class="active"><a href="#"><span class="badge pull-right"> &#8377; ${checkoutModel.checkoutTotal}/-</span> Final Payment</a></li>
 	            </ul>
+                    </div>
+                    
+                    
+                    
+	            </div>
+	           
 	            <br/>
 	            <a href="${flowExecutionUrl}&_eventId_pay" class="btn btn-success btn-lg btn-block" role="button">Pay</a>
 			

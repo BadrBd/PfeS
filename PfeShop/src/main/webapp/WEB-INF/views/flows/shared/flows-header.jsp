@@ -22,14 +22,14 @@
 
 
 
-<title>Online Shopping - ${title}</title>
+
 
 
 <script>
 	window.menu = '${title}'
 	window.contextRoot = '${contextRoot}'
 </script>
-
+<title>Online Shopping - ${title}</title>
 <!-- Bootstrap core CSS -->
 <link href="${css}/bootstrap.min.css" rel="stylesheet">
 
@@ -50,7 +50,6 @@
 
 <!-- Custom styles for this template -->
 <link href="${css}/myapp.css" rel="stylesheet">
-
 
 </head>
 

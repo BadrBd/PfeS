@@ -115,7 +115,7 @@ public class ManagementController {
 		boolean isActive = product.isActive();
 		product.setActive(!isActive);
 		productDAO.update(product);		
-		return (isActive)? "Product Dectivated Successfully!": "Product Activated Successfully";
+		return (isActive)? "Product Desactivated Successfully!": "Product Activated Successfully";
 	}
 	
 	

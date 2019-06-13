@@ -6,13 +6,13 @@
 			
 			<div class="col-md-6 col-md-offset-3">
 				
-				<div class="panel panel-primary">
+				<div class="card">
 				
-					<div class="panel-heading">
+					<div class="card-header">
 						<h4>Sign Up - Address</h4>
 					</div>
 					
-					<div class="panel-body">
+					<div class="card-body">
 										
 						<sf:form
 							method="POST"
@@ -80,10 +80,10 @@
 							<div class="form-group">
 								<div class="col-md-offset-4 col-md-8">
 									<button type="submit" name="_eventId_personal" class="btn btn-primary">
-										<span class="fas fa-chevron-left"></span> Back - Personal
+										<span class="fas fa-chevron-left"></span> Back 
 									</button>								
-									<button type="submit" name="_eventId_confirm" class="btn btn-primary">
-										Next - Confirm<span class="fas fa-chevron-right"></span>
+									<button type="submit" name="_eventId_confirm" class="btn btn-success">
+										Next <span class="fas fa-chevron-right"></span>
 									</button>																	 
 								</div>
 							</div>
