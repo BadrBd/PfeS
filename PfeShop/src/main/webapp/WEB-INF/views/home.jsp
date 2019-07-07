@@ -53,7 +53,7 @@
                     
             <div class="col-lg-4 col-md-6 mb-4" ng-repeat="product in pCtrl.mvProducts" alt="{{product.name}}" class="landingImg">
             <div class="card h-100">
-              <a href="ng-href="${contextRoot}/show/{{product.id}}/product"><img class="card-img-top" src="${images}/{{product.code}}.jpg" alt=""></a>
+              <a ng-href="${contextRoot}/show/{{product.id}}/product"><img class="card-img-top" src="${images}/{{product.code}}.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a ng-href="${contextRoot}/show/{{product.id}}/product" class="btn btn-primary pull-right">{{product.name}}</a>
@@ -98,7 +98,7 @@
                     
             <div class="col-lg-4 col-md-6 mb-4" ng-repeat="product in pCtrl.mpProducts" alt="{{product.name}}" class="landingImg">
             <div class="card h-100">
-              <a href="ng-href="${contextRoot}/show/{{product.id}}/product"><img class="card-img-top" src="${images}/{{product.code}}.jpg" alt=""></a>
+              <a ng-href="${contextRoot}/show/{{product.id}}/product"><img class="card-img-top" src="${images}/{{product.code}}.jpg" alt=""></a>
               <div class="card-body">
                 <h4 class="card-title">
                   <a ng-href="${contextRoot}/show/{{product.id}}/product" class="btn btn-primary pull-right">{{product.name}}</a>
